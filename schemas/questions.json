@@ -1,0 +1,64 @@
+{
+  "title": "Questionnaire Schema",
+  "type": "object",
+  "required": [
+    "name",
+    "groups"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "questions"
+        ],
+        "properties": {
+          "group": {
+            "type": "string"
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "question",
+                "type"
+              ],
+              "properties": {
+                "question": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "FREESINGLE",
+                    "CHOICESINGLE",
+                    "FREEMULTIPLE",
+                    "CHOICEMULTIPLE"
+                  ]
+                },
+                "validation": {
+                  "type": "string"
+                },
+                "options": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
