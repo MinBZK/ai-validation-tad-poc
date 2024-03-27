@@ -1,0 +1,28 @@
+{
+  "name": "This is the IAMA Questionnaire",
+  "groups": [
+    {
+      "name": "This is group one",
+      "questions": [
+        {
+          "question": "Licht uw voorstel voor het gebruik/de inzet van een algoritme toe. Wat is de aanleiding hiervoor geweest? Voor welk probleem moet het algoritme een oplossing bieden?",
+          "description": "Beschrijf hier beknopt het voorstel, zodanig dat een buitenstaander zou kunnen begrijpen wat u van plan bent.",
+          "type": "FREESINGLE",
+          "validation": "^[a-zA-Z]+$"
+        },
+        {
+          "question": "Wat is het doel dat bereikt dient te worden met de inzet van het algoritme? Wat is hierbij het hoofddoel en wat zijn subdoelen?",
+          "description": "",
+          "type": "FREESINGLE",
+          "validation": "^[a-zA-Z]+$"
+        },
+        {
+          "question": "Wat zijn de publieke waarden die de inzet van het algoritme ingeven? Indien meerdere publieke waarden de inzet van het algoritme ingeven, kan daar een rangschikking in aangebracht worden?",
+          "description": "",
+          "type": "FREESINGLE",
+          "validation": "^[a-zA-Z]+$"
+        }
+      ]
+    }
+  ]
+}
