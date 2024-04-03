@@ -4,6 +4,32 @@ A proof-of-concept for simple CLI for generating TAD reports.
 
 ## What does this tool do?
 
+The tool can perform different actions.
+
+A shap test can be performed against a model with testdata.
+```
+tad --action=shap --model=testdata/model/sample_bc_credit_sklearn_linear.LogisticRegression.sav
+--data=testdata/data/sample_bc_credit_data_no_default.sav --outputdir=tests
+```
+
+Questionnaires can be filled out.
+
+```
+tad --action=questionnaire
+```
+
+### TAD
+
+Given a model and a dataset, a TAD explainer is used to generate results which are saved for future usage.
+
+By default, the outputfile is saved to out/shap.yaml and contains:
+
+- shap_values: list of shap values per feature
+- base_values: list of base value per feature
+- feature_names: list of the feature names
+
+### Questionnaire
+
 The basic functionallity of this CLI is the following.
 * For each file `questionnaires/questionnaire_name.json`,
 the CLI will guide the user through the questions it contains and will emit a file
@@ -13,7 +39,7 @@ be saved.
 * If a yaml file with matching name to a questionnaire exists in `out/` the answers it contains will
 be loaded in the CLI and the user has the option to update any of these ansers.
 
-## Usage
+#### Usage
 
 The directory `questionnaires/` contains different questionnaires. A questionnaire is simply a json
 file with questions. As two examples we have put `general_info.json` and `iama.json` in this
@@ -27,7 +53,7 @@ at any time by CTRL+C; this will save the intermediate results as yaml files to 
 Optionnaly users can provide command line options to specify a path to the questionnaire validation
 schema, the questionnaire directory and the output directory:
 ```
-poetry run python/__main__.py [-h] [--schema SCHEMA] [--inputdir INPUTDIR] [--outputdir OUTPUTDIR]
+tad [-h] [--schema SCHEMA] [--inputdir INPUTDIR] [--outputdir OUTPUTDIR]
 ```
 
 ## External libraries used
