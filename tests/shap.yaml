@@ -1,0 +1,19 @@
+type: SHAP
+name: Mean Absolute Shap Values
+results:
+- name: age
+  value: '2.7313991690892594e-08'
+- name: gender
+  value: '2.1010905880210835e-11'
+- name: income
+  value: '0.027878870612476556'
+- name: race
+  value: '1.9742755605937866e-11'
+- name: home_ownership
+  value: '4.98389997821369e-12'
+- name: prior_count
+  value: '2.7000142407680143e-08'
+- name: loan_amount
+  value: '0.03782010359850043'
+- name: loan_interests
+  value: '3.5613580001571624e-12'

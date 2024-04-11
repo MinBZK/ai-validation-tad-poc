@@ -12,7 +12,8 @@ class ArgParser:
 
     class Actions(StrEnum):
         SHAP = "shap"
-        QUESTIONNAIRE = "questionnaire"
+        ASSESSMENT = "assessment"
+        REPORT = "report"
 
         @classmethod
         def list(cls):
@@ -43,12 +44,12 @@ class ArgParser:
             required=False,
             type=Path,
             default=(Path.cwd() / "out").resolve(),
-            help="the output folder containing answered questionnaires",
+            help="the output folder containing answered assessments",
         )
         # validate the first input before we continue
         self._start_parser.parse_known_args(namespace=self._user_namespace)
 
-    def _set_questionnaire_cli_args(self) -> None:
+    def _set_assessment_cli_args(self) -> None:
         """
         Defines the input parameters for the questionnaire.
         :return: None
@@ -57,7 +58,7 @@ class ArgParser:
             "--inputdir",
             required=False,
             type=Path,
-            default=(Path.cwd() / "questionnaires").resolve(),
+            default=(Path.cwd() / "assessments").resolve(),
             help="the input folder containing questionnaires",
         )
 
@@ -69,15 +70,24 @@ class ArgParser:
         self._start_parser.add_argument("--model", required=True, type=str, help="the path of the model to use")
         self._start_parser.add_argument("--data", required=True, type=str, help="the path of the data to use")
 
+    def _set_report_cli_args(self) -> None:
+        """
+        Defines the input parameters for a REPORT generation.
+        :return: None
+        """
+        self._start_parser.add_argument("--card", required=True, type=Path, help="the path of the system card to use")
+
     def _set_additional_cli_args(self) -> None:
         """
         Adds more (required) parameters depending on the current use case
         :return: None
         """
-        if self._user_namespace.action == "questionnaire":
-            self._set_questionnaire_cli_args()
-        elif self._user_namespace.action == "shap":
+        if self._user_namespace.action == ArgParser.Actions.ASSESSMENT:
+            self._set_assessment_cli_args()
+        elif self._user_namespace.action == ArgParser.Actions.SHAP:
             self._set_shap_cli_args()
+        elif self._user_namespace.action == ArgParser.Actions.REPORT:
+            self._set_report_cli_args()
 
     def print_user_args(self) -> None:
         """

@@ -1,0 +1,33 @@
+.tad_hidden {
+    display: none;
+}
+
+.tad_visible {
+    display: block;
+}
+
+table.inferenceInput {
+    border: none;
+    margin-bottom: 1em;
+
+}
+
+table.inferenceInput input {
+    height: auto;
+    padding: 0 0 0 0.5em;
+    width: 3em;
+}
+
+table.inferenceInput td, table.inferenceInput th {
+    vertical-align: middle !important;
+    border: 0;
+    padding: 0.1em;
+}
+
+table.inferenceInput th {
+    width: 8em;
+}
+
+.clickable {
+    cursor: pointer;
+}

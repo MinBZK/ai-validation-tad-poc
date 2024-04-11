@@ -44,17 +44,22 @@ class ShapTool:
         # TODO add support for more types of explainers
         explainer = shap.Explainer(self._model, self._data)
         shap_values = explainer(self._data)
+        mean_absolute_shap_values = shap_values.timestamp_to_datetimeabs.mean(0).values
 
-        results = dict(
+        results = [
             {
-                "shap_values": [],
-                "base_values": [],
-                "feature_names": [],
+                "name": name,
+                "value": str(value),
+            }
+            for name, value in zip(shap_values.feature_names, mean_absolute_shap_values)
+        ]
+
+        out = dict(
+            {
+                "type": "SHAP",
+                "name": "Mean Absolute Shap Values",
+                "results": results,
             }
         )
 
-        results["shap_values"] = shap_values.values.tolist()
-        results["base_values"] = shap_values.base_values.tolist()
-        results["feature_names"] = shap_values.feature_names
-
-        return results
+        return out
