@@ -1,0 +1,76 @@
+language:
+  - nl
+license_name: cc-by-4.0
+license_link: https://creativecommons.org/licenses/by/4.0/legalcode.en
+tags:
+  - automatic-speech-recognition
+  - speech
+  - audio
+  - Transducer
+  - FastConformer
+  - CTC
+  - Transformer
+  - pytorch
+  - NeMo
+  - hf-asr-leaderboard
+owners:
+- organization: BZK
+  oin: "0000001003214345000"
+  name: John Doe
+  email: johndoe@email.com
+  role: Data Scientist.
+
+model-index:
+- name: stt_nl_fastconformer_hybrid_large_pc
+  model: https://huggingface.co/nvidia/stt_nl_fastconformer_hybrid_large_pc 
+  artifacts:
+  - "artifact_1"
+  parameters:
+  - name: epochs
+    dtype: int
+    value: "100" 
+    labels: 
+      - name: "gender"
+        dtype: "string"
+        value: "female"
+  results:
+  - task:
+      type: automatic-speech-recognition 
+      name: Automatic Speech Recognition 
+    dataset:
+      - type: "common_voice"
+        name: "Common Voice (French)"
+        split: "train"
+        features:
+         - "gender"
+        revision: "5503434ddd753f426f4b38109466949a1217c2bb"
+    metrics:
+    - type: false-positive-rate
+      name: "FPR wrt class 0 restricted to feature gender:0 and age:21"
+      dtype: "float"
+      value: "0.75"
+      labels:
+        - name: "gender"
+          type: "feature" 
+          dtype: "string"
+          value: "female"
+    measurements:
+      bar_plots:
+      - type: "SHAP"
+        name: "Mean Absolute Shap Values"
+        results:
+        - name: "first" 
+          value: "0"
+        - name: "second" 
+          value: "20"
+      graph_plots:
+      - type: "partial_dependence"
+        name: "Partial Dependence Plot"
+        results:
+         - class: "1"
+           feature: "gender"
+           data:
+            - x_value: "0"
+              y_value: "1"
+            - x_value: "1"
+              y_value: "1"

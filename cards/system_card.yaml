@@ -1,0 +1,36 @@
+version: "0.1a1"
+name: "AangifteVertrekBuitenland"
+upl: "https://standaarden.overheid.nl/owms/terms/AangifteVertrekBuitenland"
+owners:
+- oin: "00000001003214345000"
+  organization: "BZK"
+  name: "John Doe"
+  email: "johndoe@email.com"
+  role: "Data Scientist"
+description: "System description"
+labels:
+- name: "label_1"
+  value: "value_1"
+status: "production"
+publication_category: "impactfull_algorithm"
+begin_date: "2025-1-1"
+end_date: "2025-12-1"
+goal_and_impact: "Goal and impact of the system."
+considerations: "Considerations about the system."
+risk_management: "Description of risks associated with the system."
+human_intervention: "Description of human involvement in the system."
+legal_base:
+- name: "AVG"
+  link: "https://eur-lex.europa.eu/legal-content/NL/TXT/HTML/?uri=CELEX:31995L0046"
+used_data: "Description of the data used by the system."
+technical_design: "Description of the technical design of the system."
+external_providers:
+- "external_provider_1" 
+references:
+- "reference_to_provider_1" 
+
+models:
+ - !include models/model_card.yaml 
+
+assessments:
+- !include assessments/iama.yaml 
