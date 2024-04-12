@@ -1,140 +1,157 @@
 <h1>{{name}}</h1>
-<div class="item default" data-v-40e6aa29="">
-    <p lang="nl" data-v-40e6aa29=""><span class="word-break" ca="" data-v-40e6aa29=""><!--[-->
-            <div data-v-40e6aa29="" class="width-sizing custom-html">
-                {{name}}</div><!--]-->
-        </span></p>
+
+<div data-v-40e6aa29="" class="item default custom-blue-box">
+    <p data-v-40e6aa29="" lang="nl"><span data-v-40e6aa29="" class="word-break" ca=""><div data-v-40e6aa29=""
+                                                                                           class="width-sizing custom-html">(Interne) tooling die gebruikt wordt voor het verwerken van data van DGDOO Beleidsinformatie.</div></span>
+    </p>
     <dl data-v-40e6aa29="" class="dl columns--data">
         <div data-v-40e6aa29="" class="">
             <dt data-v-40e6aa29="">Organisatie</dt>
-            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
-                    <div data-v-40e6aa29="" class="width-sizing custom-html">Gemeente Voorst
-                    </div>
-                </span></dd>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break"
+                                                                            ca=""><div data-v-40e6aa29=""
+                                                                                       class="width-sizing custom-html">Ministerie van Binnenlandse Zaken en Koninkrijksrelaties</div></span>
+            </dd>
         </div>
         <div data-v-40e6aa29="" class="">
             <dt data-v-40e6aa29="">Thema</dt>
-            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
-                    <div data-v-40e6aa29="" class="width-sizing custom-html">Organisatie en
-                        bedrijfsvoering</div>
-                </span></dd>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break"
+                                                                            ca=""><div data-v-40e6aa29=""
+                                                                                       class="width-sizing custom-html">Organisatie en bedrijfsvoering</div></span>
+            </dd>
         </div>
         <div data-v-40e6aa29="" class="">
             <dt data-v-40e6aa29="">Status</dt>
-            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
-                    <div data-v-40e6aa29="" class="width-sizing custom-html">In gebruik
-                    </div>
-                </span></dd>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break"
+                                                                            ca=""><div data-v-40e6aa29=""
+                                                                                       class="width-sizing custom-html">In gebruik</div></span>
+            </dd>
         </div>
     </dl>
-</div><!---->
+</div>
+
 <div class="tabs" data-decorator="init-tabs">
     <ul data-v-25c41979="" class="tabs__list" role="tablist">
-        <li data-v-25c41979="" role="presentation"><a data-v-25c41979="" tabindex="0" aria-selected="true"
-                class="noselect is-selected focus-border" role="tab" aria-controls="panel-1">Algemene informatie</a>
-        </li>
-        <li data-v-25c41979="" role="presentation"><a data-v-25c41979="" tabindex="-1" aria-selected="false"
-                class="noselect focus-border" role="tab" aria-controls="panel-2">Verantwoord gebruik</a></li>
-        <li data-v-25c41979="" role="presentation"><a data-v-25c41979="" tabindex="-1" aria-selected="false"
-                class="noselect focus-border" role="tab" aria-controls="panel-3">Werking</a></li>
+        <li onclick="toggle('systemcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979="" tabindex="0" aria-selected="false"
+                                                      class="noselect is-selected no-focus-border" role="tab"
+                                                      aria-controls="panel-1">System card</a></li>
+        <li onclick="toggle('modelcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979="" tabindex="-1" aria-selected="false"
+                                                      class="noselect no-focus-border" role="tab"
+                                                      aria-controls="panel-2">Model card</a></li>
+        <li onclick="toggle('assessmentcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979="" tabindex="-1" aria-selected="false"
+                                                      class="noselect no-focus-border" role="tab"
+                                                      aria-controls="panel-3">Assessment card</a></li>
     </ul>
-    <table class="table__data-overview">
-        <tbody>
+
+    <div id="systemcard" class="tad_visible tad_tabs">
+        <table class="table__data-overview">
             <tr>
-                <th scope="row">
-                    <div class="space-for-question-mark">Naam <span class="question-mark" role="button" tabindex="0"
-                            aria-expanded="false"
-                            title="Uitleg over het algoritme-eigenschap &#39;naam&#39;"></span><!---->
-                    </div>
-                </th>
-                <td lang="nl"><span class="word-break" ca="">
-                        <div class="width-sizing custom-html">Anonimiseringssoftware</div>
-                    </span></td>
+                <td>System Card Version</td>
+                <td>{{version}}</td>
             </tr>
             <tr>
-                <th scope="row">
-                    <div class="space-for-question-mark">Korte omschrijving <span class="question-mark" role="button"
-                            tabindex="0" aria-expanded="false"
-                            title="Uitleg over het algoritme-eigenschap &#39;korte omschrijving&#39;"></span><!---->
-                    </div>
-                </th>
-                <td lang="nl"><span class="word-break" ca="">
-                        <div class="width-sizing custom-html">Het algoritme herkent en
-                            anonimiseert onder andere (persoons)gegevens en vertrouwelijke
-                            (financiële) gegevens in documenten, voordat deze gepubliceerd
-                            worden, bijvoorbeeld op basis van de Wet Open Overheid.</div>
-                    </span></td>
+                <td>Name</td>
+                <td>{{name}}</td>
             </tr>
             <tr>
-                <th scope="row">
-                    <div class="space-for-question-mark">Organisatie <span class="question-mark" role="button"
-                            tabindex="0" aria-expanded="false"
-                            title="Uitleg over het algoritme-eigenschap &#39;organisatie&#39;"></span><!---->
-                    </div>
-                </th>
-                <td lang="nl"><span class="word-break" ca="">
-                        <div class="width-sizing custom-html">Gemeente Voorst</div>
-                    </span></td>
+                <td>UPL</td>
+                <td>{{upl}}</td>
             </tr>
             <tr>
-                <th scope="row">
-                    <div class="space-for-question-mark">Thema <span class="question-mark" role="button" tabindex="0"
-                            aria-expanded="false"
-                            title="Uitleg over het algoritme-eigenschap &#39;thema&#39;"></span><!---->
-                    </div>
-                </th>
-                <td lang="nl"><span class="word-break" ca="">
-                        <div class="width-sizing custom-html">Organisatie en bedrijfsvoering
-                        </div>
-                    </span></td>
+                <td>Owners</td>
+                <td>
+                    {% for owner in owners %}
+                    {{owner.oin}}<br/>
+                    {{owner.organization}}<br/>
+                    {{owner.name}}<br/>
+                    {{owner.email}}</br>
+                    {{owner.role}}</br>
+                    {% endfor %}
+                </td>
             </tr>
             <tr>
-                <th scope="row">
-                    <div class="space-for-question-mark">Status <span class="question-mark" role="button" tabindex="0"
-                            aria-expanded="false"
-                            title="Uitleg over het algoritme-eigenschap &#39;status&#39;"></span><!---->
-                    </div>
-                </th>
-                <td lang="nl"><span class="word-break" ca="">
-                        <div class="width-sizing custom-html">In gebruik</div>
-                    </span></td>
+                <td>Description</td>
+                <td>{{description}}</td>
             </tr>
             <tr>
-                <th scope="row">
-                    <div class="space-for-question-mark">Begindatum <span class="question-mark" role="button"
-                            tabindex="0" aria-expanded="false"
-                            title="Uitleg over het algoritme-eigenschap &#39;begindatum&#39;"></span><!---->
-                    </div>
-                </th>
-                <td lang="nl"><span class="word-break" ca="">
-                        <div class="width-sizing custom-html">01-2024</div>
-                    </span></td>
+                <td>Labels</td>
+                <td>
+                    {% for label in labels %}
+                    {{ label.name }}={{label.value}},
+                    {% endfor %}
+                </td>
             </tr>
             <tr>
-                <th scope="row">
-                    <div class="space-for-question-mark">Contactgegevens <span class="question-mark" role="button"
-                            tabindex="0" aria-expanded="false"
-                            title="Uitleg over het algoritme-eigenschap &#39;contactgegevens&#39;"></span><!---->
-                    </div>
-                </th>
-                <td lang="nl"><span class="word-break" ca="">
-                        <div class="width-sizing custom-html"><a href="mailto:gemeente@voorst.nl" target="_blank"
-                                class="is-external-mail-icon"><span class="visually-hidden">Link naar een
-                                    e-mailadres</span>
-                                gemeente@voorst.nl</a></div>
-                    </span></td>
+                <td>Status</td>
+                <td>{{status}}</td>
             </tr>
             <tr>
-                <th scope="row">
-                    <div class="space-for-question-mark">Publicatiecategorie <span class="question-mark" role="button"
-                            tabindex="0" aria-expanded="false"
-                            title="Uitleg over het algoritme-eigenschap &#39;publicatiecategorie&#39;"></span><!---->
-                    </div>
-                </th>
-                <td lang="nl"><span class="word-break" ca="">
-                        <div class="width-sizing custom-html">Overige algoritmes</div>
-                    </span></td>
+                <td>Publication category</td>
+                <td>{{publication_category}}</td>
             </tr>
-        </tbody>
-    </table>
+            <tr>
+                <td>Begin date</td>
+                <td>{{begin_date}}</td>
+            </tr>
+            <tr>
+                <td>End date</td>
+                <td>{{end_date}}</td>
+            </tr>
+            <tr>
+                <td>Goal and impact</td>
+                <td>{{goal_and_impact}}</td>
+            </tr>
+            <tr>
+                <td>Considerations</td>
+                <td>{{considerations}}</td>
+            </tr>
+            <tr>
+                <td>Risk management</td>
+                <td>{{risk_management}}</td>
+            </tr>
+            <tr>
+                <td>Human intervention</td>
+                <td>{{human_intervention}}</td>
+            </tr>
+            <tr>
+                <td>Legal base</td>
+                <td>
+                    {% for item in legal_base %}
+                    {{item.name}}:{{item.link}}
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>Used data</td>
+                <td>{{used_data}}</td>
+            </tr>
+            <tr>
+                <td>Technical design</td>
+                <td>{{technical_design}}</td>
+            </tr>
+            <tr>
+                <td>External providers</td>
+                <td>
+                    {% for item in external_providers %}
+                    {{item}}<br/>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>References</td>
+                <td>
+                    {% for item in references %}
+                    {{item}}<br/>
+                    {% endfor %}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="modelcard" class="tad_hidden tad_tabs">
+    Inhoud voor de modelcard
+    </div>
+    <div id="assessmentcard" class="tad_hidden tad_tabs">
+    Inhoud van de assessment card
+    </div>
+
+
 </div>

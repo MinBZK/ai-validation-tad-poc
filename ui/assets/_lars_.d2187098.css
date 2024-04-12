@@ -1,1 +1,97 @@
-.dl.columns--data div[data-v-40e6aa29]{padding:.5em}.no-bottom-margin[data-v-40e6aa29]{margin-bottom:0}div.default[data-v-40e6aa29]{background:#e5f1f9!important;border:0;list-style:none;margin-bottom:.5em;padding:1em}@media (min-width:51em){div.default[data-v-40e6aa29]{padding:1.5em 10%!important}}.column--fullwidth[data-v-40e6aa29]{width:100%!important}.accordion__item__header[data-v-75fd4f3a]{cursor:pointer}.word-break[data-v-75fd4f3a]{word-break:break-word}.question-mark[data-v-75fd4f3a]{padding-left:0}h2[data-v-75fd4f3a]{font-size:1.125em!important}.accordion__item__heading[data-v-75fd4f3a]{font-size:1em!important}.tabs__list a[data-v-25c41979]{cursor:pointer}li a.focus-click[data-v-25c41979]:focus{box-shadow:0 0 #000!important;outline:0}.question-mark{padding-left:0}.space-for-question-mark{padding-right:1em!important}@media (min-width:65em){.language-disclaimer{margin:0 2em 1em}}@media (max-width:65em){.language-disclaimer{margin:0 0 1em}}.header-width{max-width:49em;width:100%}.header-spacing{align-items:center;display:inline-flex;justify-content:space-between;width:inherit}@media (max-width:40em){.header-spacing{flex-direction:column!important;row-gap:.5em}.header-width{width:auto}}
+.dl.columns--data div[data-v-40e6aa29] {
+    padding: .5em
+}
+
+.no-bottom-margin[data-v-40e6aa29] {
+    margin-bottom: 0
+}
+
+div.default[data-v-40e6aa29] {
+    background: #e5f1f9 !important;
+    border: 0;
+    list-style: none;
+    margin-bottom: .5em;
+    padding: 1em
+}
+
+@media (min-width: 51em) {
+    div.default[data-v-40e6aa29] {
+        padding: 1.5em 10% !important
+    }
+}
+
+.column--fullwidth[data-v-40e6aa29] {
+    width: 100% !important
+}
+
+.accordion__item__header[data-v-75fd4f3a] {
+    cursor: pointer
+}
+
+.word-break[data-v-75fd4f3a] {
+    word-break: break-word
+}
+
+.question-mark[data-v-75fd4f3a] {
+    padding-left: 0
+}
+
+h2[data-v-75fd4f3a] {
+    font-size: 1.125em !important
+}
+
+.accordion__item__heading[data-v-75fd4f3a] {
+    font-size: 1em !important
+}
+
+.tabs__list a[data-v-25c41979] {
+    cursor: pointer
+}
+
+li a.focus-click[data-v-25c41979]:focus {
+    box-shadow: 0 0 #000 !important;
+    outline: 0
+}
+
+.question-mark {
+    padding-left: 0
+}
+
+.space-for-question-mark {
+    padding-right: 1em !important
+}
+
+@media (min-width: 65em) {
+    .language-disclaimer {
+        margin: 0 2em 1em
+    }
+}
+
+@media (max-width: 65em) {
+    .language-disclaimer {
+        margin: 0 0 1em
+    }
+}
+
+.header-width {
+    max-width: 49em;
+    width: 100%
+}
+
+.header-spacing {
+    align-items: center;
+    display: inline-flex;
+    justify-content: space-between;
+    width: inherit
+}
+
+@media (max-width: 40em) {
+    .header-spacing {
+        flex-direction: column !important;
+        row-gap: .5em
+    }
+
+    .header-width {
+        width: auto
+    }
+}

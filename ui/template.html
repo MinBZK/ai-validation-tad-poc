@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+    <link rel="stylesheet" type="text/css" href="assets/tad.css">
+    <script src="assets/tad.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="assets/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/_lars_.d2187098.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/getLayoutConfig.ca44fce8.css"/>
     <link nonce="NmRkZjYwYTUtZjU5My00OTAxLWJlODQtNWFiZTkxNWZkMzdl" rel="preload" as="style"
           href="/assets/entry.164a9c93.css">
     <link nonce="NmRkZjYwYTUtZjU5My00OTAxLWJlODQtNWFiZTkxNWZkMzdl" rel="preload" as="style"
@@ -278,10 +282,10 @@
             <nav id="nav" class="header__nav" data-v-36ad2b4e>
                 <div class="container header-content" data-v-36ad2b4e>
                     <ul class="header__primary-nav list list--unstyled" data-v-36ad2b4e><!--[-->
-                        <li class="active" data-v-36ad2b4e><a aria-current="page" href="/nl"
-                                                              class="router-link-active router-link-exact-active focus-border"
+                        <li class="" data-v-36ad2b4e><a class="focus-border"
                                                               data-v-36ad2b4e>Home</a></li>
-                        <li class="" data-v-36ad2b4e><a href="/nl/algoritme" class="focus-border" data-v-36ad2b4e>Algoritmes</a>
+                        <li class="active" data-v-36ad2b4e><a aria-current="page" href="/nl"
+                                                              class="router-link-active router-link-exact-active focus-border" href="/nl/algoritme" data-v-36ad2b4e>Algoritmes</a>
                         </li>
                         <li class="" data-v-36ad2b4e><a href="/nl/organisatie" class="focus-border" data-v-36ad2b4e>Organisaties</a>
                         </li><!--]--></ul>
@@ -301,7 +305,12 @@
             <div id="content" data-v-037c1dfd><!--[-->
                 <div data-v-186dd611><!---->
 
+                    <div class="container row container--centered">
+
                     <!-- TEMPLATE BODY STARTS HERE -->
+                    {{ content }}
+
+                    </div>
 
                 </div><!--]--></div>
         </div>

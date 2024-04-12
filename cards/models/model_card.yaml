@@ -22,21 +22,21 @@ owners:
 
 model-index:
 - name: stt_nl_fastconformer_hybrid_large_pc
-  model: https://huggingface.co/nvidia/stt_nl_fastconformer_hybrid_large_pc 
+  model: https://huggingface.co/nvidia/stt_nl_fastconformer_hybrid_large_pc
   artifacts:
   - "artifact_1"
   parameters:
   - name: epochs
     dtype: int
-    value: "100" 
-    labels: 
+    value: "100"
+    labels:
       - name: "gender"
         dtype: "string"
         value: "female"
   results:
   - task:
-      type: automatic-speech-recognition 
-      name: Automatic Speech Recognition 
+      type: automatic-speech-recognition
+      name: Automatic Speech Recognition
     dataset:
       - type: "common_voice"
         name: "Common Voice (French)"
@@ -51,7 +51,7 @@ model-index:
       value: "0.75"
       labels:
         - name: "gender"
-          type: "feature" 
+          type: "feature"
           dtype: "string"
           value: "female"
     measurements:
@@ -59,9 +59,9 @@ model-index:
       - type: "SHAP"
         name: "Mean Absolute Shap Values"
         results:
-        - name: "first" 
+        - name: "first"
           value: "0"
-        - name: "second" 
+        - name: "second"
           value: "20"
       graph_plots:
       - type: "partial_dependence"
