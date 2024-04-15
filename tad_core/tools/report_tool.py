@@ -24,11 +24,11 @@ class ReportTool:
         yaml.add_constructor("!include", yaml_include.Constructor(base_dir="cards/"))
         with open(Path(cards_folder_resolved, "system_card.yaml")) as f:
             data = yaml.full_load(f)
-        
+
         # Normalise model-index to model_index.
         for model in data["models"]:
             model["model_index"] = model.pop("model-index")
-        
+
         with open(Path(Path.cwd(), "ui", "reference.html")) as f:
             reference_file = f.read()
 
