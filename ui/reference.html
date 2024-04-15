@@ -14,9 +14,8 @@
                         {% for owner in owners %}
                         {{owner.organization}}
                         {{owner.oin}}<br />
-                        {{owner.name}}<br />
-                        {{owner.email}}</br>
-                        {{owner.role}}</br>
+                        {{owner.name}}, {{owner.role}}<br />
+                        {{owner.email}}<br />
                         {% endfor %}
                     </div>
                 </span>
@@ -279,7 +278,7 @@
     </div>
     <div id="assessmentcard" class="tad_hidden tad_tabs">
 
-        <p> Submitted on {{assessments[0].date}}</p>
+        <p> Submitted on {{assessments[0].date}}.</p>
 
         {% for content in assessments[0].contents %}
 
