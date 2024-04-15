@@ -30,7 +30,6 @@ external_providers:
 references:
 - "reference_1"
 - "reference_2"
-- "reference_3"
 
 models:
  - !include models/model_card.yaml

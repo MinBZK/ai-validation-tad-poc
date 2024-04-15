@@ -3,7 +3,13 @@
 <div data-v-40e6aa29="" class="item default custom-blue-box">
     <p data-v-40e6aa29="" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
             <div data-v-40e6aa29="" class="width-sizing custom-html">
-                {{description}}</div>
+                <p> {{description}} </p>
+
+                {% if upl %}
+                <b>UPL:</b> {{ upl }}
+                {% endif %}
+
+            </div>
         </span>
     </p>
     <dl data-v-40e6aa29="" class="dl columns--data">
@@ -51,16 +57,39 @@
             </dd>
         </div>
         {% endif %}
+        {% if labels %}
+        <div data-v-40e6aa29="" class="">
+            <dt data-v-40e6aa29="">Labels</dt>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+                    <div data-v-40e6aa29="" class="width-sizing custom-html">
+                        {% for label in labels %}
+                        {{ label.name }}:{{label.value}} <br />
+                        {% endfor %}
+                    </div>
+                </span>
+            </dd>
+        </div>
+        {% endif %}
+        {% if references %}
+        <div data-v-40e6aa29="" class="">
+            <dt data-v-40e6aa29="">References</dt>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+                    <div data-v-40e6aa29="" class="width-sizing custom-html">
+                        {% for item in references %}
+                        {{item}}<br />
+                        {% endfor %}
+                    </div>
+                </span>
+            </dd>
+        </div>
+        {% endif %}
     </dl>
 </div>
 
 <div class="tabs" data-decorator="init-tabs">
     <ul data-v-25c41979="" class="tabs__list" role="tablist">
-        <li onclick="toggle('systemcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
-                tabindex="0" aria-selected="false" class="noselect is-selected no-focus-border" role="tab"
-                aria-controls="panel-1">System card</a></li>
         <li onclick="toggle('responsibleuse', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
-                tabindex="-1" aria-selected="false" class="noselect no-focus-border" role="tab"
+                tabindex="0" aria-selected="false" class="noselect is-selected no-focus-border" role="tab"
                 aria-controls="panel-2">Responsible Use</a></li>
         <li onclick="toggle('operations', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
                 tabindex="-1" aria-selected="false" class="noselect no-focus-border" role="tab"
@@ -73,30 +102,8 @@
                 aria-controls="panel-5">IAMA</a></li>
     </ul>
 
-    <div id="systemcard" class="tad_visible tad_tabs">
-        <table class="table__data-overview">
-            <tr>
-                <th>UPL</th>
-                <td>{{upl}}</td>
-            </tr>
-            <tr>
-                <th>Labels</th>
-                <td>
-                    {% for label in labels %}
-                    {{ label.name }}={{label.value}},
-                    {% endfor %}
-                </td>
-            </tr>
-            <th>References</th>
-            <td>
-                {% for item in references %}
-                {{item}}<br />
-                {% endfor %}
-            </td>
-            </tr>
-        </table>
     </div>
-    <div id="responsibleuse" class="tad_hidden tad_tabs">
+    <div id="systemcard" class="tad_visible tad_tabs">
         <table class="table__data-overview">
             <tr>
                 <th>Goal and impact</th>
