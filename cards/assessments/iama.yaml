@@ -1,10 +1,10 @@
-- name: IAMA
-  date: "2025-03-25"
-  contents:
-    - question: Question 1
-      answer: Answer 1
-      remarks: Remark 1
-      authors:
-        - name: "author_1"
-        - name: "author_2"
-      timestamp: "1711630721"
+name: IAMA
+date: "2025-03-25"
+contents:
+  - question: Question 1
+    answer: Answer 1
+    remarks: Remark 1
+    authors:
+      - name: "author_1"
+      - name: "author_2"
+    timestamp: "1711630721"
