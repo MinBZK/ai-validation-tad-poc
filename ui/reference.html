@@ -268,7 +268,23 @@
 
     </div>
     <div id="assessmentcard" class="tad_hidden tad_tabs">
-        Inhoud van de assessment card
+        {% for assessment in assessments %}
+
+        <h2> {{assessment.name}} ({{assessment.date}})</h2>
+
+        {% for content in assessment.contents %}
+
+        <h3> {{content.question}} </h3>
+        {{content.answer}} <br />
+
+        Answered at {{ content.timestamp }} by
+        <ul>
+            {% for author in content.authors %}
+            <li> author </li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+        {% endfor %}
     </div>
 
 
