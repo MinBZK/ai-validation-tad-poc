@@ -308,30 +308,34 @@
                     <div class="container row container--centered">
 
                     <!-- TEMPLATE BODY STARTS HERE -->
-                    <h1>Aangifte Vertrek Buitenland</h1>
+                    <h1>Zoeken naar mogelijke registraties van vreemdelingen</h1>
 
 <div data-v-40e6aa29="" class="item default custom-blue-box">
     <p data-v-40e6aa29="" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
             <div data-v-40e6aa29="" class="width-sizing custom-html">
-                System description</div>
+                Algoritme dat het mogelijk maakt om fonetisch (gegevens schrijven zoals ze klinken) te zoeken op persoonsgegevens van vreemdelingen die geregistreerd zijn in de Basisvoorziening Vreemdelingen (BVV).</div>
         </span>
     </p>
     <dl data-v-40e6aa29="" class="dl columns--data">
         <div data-v-40e6aa29="" class="">
-            <dt data-v-40e6aa29="">Organisatie(s)</dt>
+            <dt data-v-40e6aa29="">Organization(s)</dt>
             <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
                     <div data-v-40e6aa29="" class="width-sizing custom-html">
 
-                        Ministerie van Binnenlandse Zaken en Koninkrijksrelaties
+                        Ministerie van Justitie en Veiligheid
+                        00000003273808340000<br />
+                        John Doe<br />
+                        johndoe@email.com</br>
+                        Data Scientist</br>
 
                     </div>
                 </span>
             </dd>
         </div>
         <div data-v-40e6aa29="" class="">
-            <dt data-v-40e6aa29="">Thema</dt>
+            <dt data-v-40e6aa29="">Publication Category</dt>
             <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
-                    <div data-v-40e6aa29="" class="width-sizing custom-html">Organisatie en bedrijfsvoering</div>
+                    <div data-v-40e6aa29="" class="width-sizing custom-html">other_algorithms</div>
                 </span>
             </dd>
         </div>
@@ -342,6 +346,14 @@
                 </span>
             </dd>
         </div>
+        <div data-v-40e6aa29="" class="">
+            <dt data-v-40e6aa29="">Begin Date</dt>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+                    <div data-v-40e6aa29="" class="width-sizing custom-html">2003-05-1</div>
+                </span>
+            </dd>
+        </div>
+
     </dl>
 </div>
 
@@ -350,31 +362,25 @@
         <li onclick="toggle('systemcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
                 tabindex="0" aria-selected="false" class="noselect is-selected no-focus-border" role="tab"
                 aria-controls="panel-1">System card</a></li>
+        <li onclick="toggle('responsibleuse', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
+                tabindex="-1" aria-selected="false" class="noselect no-focus-border" role="tab"
+                aria-controls="panel-2">Responsible Use</a></li>
+        <li onclick="toggle('operations', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
+                tabindex="-1" aria-selected="false" class="noselect no-focus-border" role="tab"
+                aria-controls="panel-3">Operations</a></li>
         <li onclick="toggle('modelcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
                 tabindex="-1" aria-selected="false" class="noselect no-focus-border" role="tab"
-                aria-controls="panel-2">Model card</a></li>
+                aria-controls="panel-4">Model card</a></li>
         <li onclick="toggle('assessmentcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
                 tabindex="-1" aria-selected="false" class="noselect no-focus-border" role="tab"
-                aria-controls="panel-3">Assessment card</a></li>
+                aria-controls="panel-5">Assessment card</a></li>
     </ul>
 
     <div id="systemcard" class="tad_visible tad_tabs">
         <table class="table__data-overview">
             <tr>
                 <th>UPL</th>
-                <td>https://standaarden.overheid.nl/owms/terms/AangifteVertrekBuitenland</td>
-            </tr>
-            <tr>
-                <th>Owners</th>
-                <td>
-
-                    00000001003214345000<br />
-                    Ministerie van Binnenlandse Zaken en Koninkrijksrelaties<br />
-                    John Doe<br />
-                    johndoe@email.com</br>
-                    Data Scientist</br>
-
-                </td>
+                <td></td>
             </tr>
             <tr>
                 <th>Labels</th>
@@ -386,71 +392,62 @@
 
                 </td>
             </tr>
-            <tr>
-                <th>Publication category</th>
-                <td>impactfull_algorithm</td>
+            <th>References</th>
+            <td>
+
+                reference_1<br />
+
+                reference_2<br />
+
+                reference_3<br />
+
+            </td>
             </tr>
-            <tr>
-                <th>Begin date</th>
-                <td>2025-1-1</td>
-            </tr>
-            <tr>
-                <th>End date</th>
-                <td>2025-12-1</td>
-            </tr>
+        </table>
+    </div>
+    <div id="responsibleuse" class="tad_hidden tad_tabs">
+        <table class="table__data-overview">
             <tr>
                 <th>Goal and impact</th>
-                <td>Goal and impact of the system.</td>
+                <td>Providing assistance in investigating whether foreign nationals in contact with the Dutch government have previously been registered in the Basisvoorziening Vreemdelingen. The Basisvoorziening Vreemdelingen is the central information system used by the organisations working together in the migration chain. The system contains basic data on foreigners and is maintained by the chain partners in the migration chain. Searching whether someone is already registered can prevent people from being registered multiple times. The algorithm to search phonetically can be applied if a person is not found based on fingerprints, or if foreigners do not have an identity document.</td>
             </tr>
             <tr>
                 <th>Considerations</th>
-                <td>Considerations about the system.</td>
-            </tr>
-            <tr>
-                <th>Risk management</th>
-                <td>Description of risks associated with the system.</td>
+                <td>The algorithm can be used to search for data of persons whose details are not well known. This can lead to better identification of foreigners. By entering data as it sounds, the algorithm is used to find the possible correct spelling of the data. This will help an employee if the language or letters do not match the Dutch alphabet. Use of this algorithm can prevent duplicate registrations.</td>
             </tr>
             <tr>
                 <th>Human intervention</th>
-                <td>Description of human involvement in the system.</td>
+                <td>The algorithm is only used to support staff at organisations to establish the identity of a foreign national. This is done at the Police, Royal Military Police, Immigration and Naturalisation Service, Foreign Affairs. The algorithm can provide a list of candidates, but the employee always remains responsible for using this data himself. This may result in a registration being reused, or a new registration being made.</td>
+            </tr>
+            <tr>
+                <th>Risk management</th>
+                <td>The algorithm is tested annually to see if the results given are sufficiently correct according to the agreements made (number of results shown, degree of similarity). This is done by the organisations using the algorithm and by the administrator. The operation of the algorithm can only be modified by the supplier. New versions are released regularly.</td>
             </tr>
             <tr>
                 <th>Legal base</th>
                 <td>
 
-                    AVG:https://eur-lex.europa.eu/legal-content/NL/TXT/HTML/?uri=CELEX:31995L0046
+                    Aliens Act 2000:https://wetten.overheid.nl/BWBR0011823/2024-01-01
 
                 </td>
             </tr>
+        </table>
+    </div>
+    <div id="operations" class="tad_hidden tad_tabs">
+        <table class="table__data-overview">
             <tr>
-                <th>Used data</th>
-                <td>Description of the data used by the system.</td>
+                <th>Data</th>
+                <td>The database only contains personal data of aliens registered in the Basic Immigration Facility. These include name data, birth data and nationalities. The data usually come from Police, Marechaussee, Immigration and Naturalisation Service or Foreign Affairs, but may also come from municipalities.</td>
             </tr>
             <tr>
                 <th>Technical design</th>
-                <td>Description of the technical design of the system.</td>
+                <td>When foreigners' data are registered or changed in the BMS, they are also immediately placed in the phonetic search system. The algorithm provides options for convenient searching in this. Depending on the search query, the way the data are consulted is determined. A maximum number of search results can also be specified. For each search result, the degree of similarity is shown.</td>
             </tr>
             <tr>
                 <th>External providers</th>
                 <td>
 
-                    external_provider_1<br />
-
-                    external_provider_2<br />
-
-                    external_provider_3<br />
-
-                </td>
-            </tr>
-            <tr>
-                <th>References</th>
-                <td>
-
-                    reference_1<br />
-
-                    reference_2<br />
-
-                    reference_3<br />
+                    Human Inference (part of the Data Agency)<br />
 
                 </td>
             </tr>
@@ -503,8 +500,8 @@
                 <th>Owners</th>
                 <td>
 
-                    00000001003214345000<br />
-                    Ministerie van Binnenlandse Zaken en Koninkrijksrelaties<br />
+                    00000003273808340000<br />
+                    Ministerie van Justitie en Veiligheid<br />
                     John Doe<br />
                     johndoe@email.com</br>
                     Data Scientist</br>
@@ -609,55 +606,67 @@
 
 
         <h3> Licht uw voorstel voor het gebruik/de inzet van een algoritme toe. Wat is de aanleiding hiervoor geweest? Voor welk probleem moet het algoritme een oplossing bieden? </h3>
-        Answer <br />
-
-        Answered at 1711630721 by
+        Answered at 03/28/2024, 13:58:41 by
         <ul>
 
-            <li> author </li>
+            <li> author_1 </li>
 
-            <li> author </li>
+            <li> author_2 </li>
 
         </ul>
+
+        <p>
+            Answer <br />
+        </p>
+
 
 
         <h3> Wat is het doel dat bereikt dient te worden met de inzet van het algoritme? Wat is hierbij het hoofddoel en wat zijn subdoelen? </h3>
-        Answer <br />
-
-        Answered at 1711630721 by
+        Answered at 03/28/2024, 13:58:41 by
         <ul>
 
-            <li> author </li>
+            <li> author_1 </li>
 
-            <li> author </li>
+            <li> author_2 </li>
 
         </ul>
+
+        <p>
+            Answer <br />
+        </p>
+
 
 
         <h3> Wat zijn de publieke waarden die de inzet van het algoritme ingeven? Indien meerdere publieke waarden de inzet van het algoritme ingeven, kan daar een rangschikking in aangebracht worden? </h3>
-        Answer <br />
-
-        Answered at 1711630721 by
+        Answered at 03/28/2024, 13:58:41 by
         <ul>
 
-            <li> author </li>
+            <li> author_1 </li>
 
-            <li> author </li>
+            <li> author_2 </li>
 
         </ul>
+
+        <p>
+            Answer <br />
+        </p>
+
 
 
         <h3> Wat zijn de publieke waarden die mogelijk in het gedrang komen door de inzet van het algoritme? </h3>
-        Answer <br />
-
-        Answered at 1711630721 by
+        Answered at 03/28/2024, 13:58:41 by
         <ul>
 
-            <li> author </li>
+            <li> author_1 </li>
 
-            <li> author </li>
+            <li> author_2 </li>
 
         </ul>
+
+        <p>
+            Answer <br />
+        </p>
+
 
 
     </div>

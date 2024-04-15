@@ -1,9 +1,10 @@
 import logging
+from datetime import datetime
 from pathlib import Path
 
+import jinja2
 import yaml
 import yaml_include
-from jinja2 import Template
 
 logger = logging.getLogger(__name__)
 
@@ -29,17 +30,20 @@ class ReportTool:
         for model in data["models"]:
             model["model_index"] = model.pop("model-index")
 
-        with open(Path(Path.cwd(), "ui", "reference.html")) as f:
-            reference_file = f.read()
+        templateLoader = jinja2.FileSystemLoader(searchpath="./")
+        env = jinja2.Environment(loader=templateLoader)
+        env.filters["timestamp_to_datetime"] = ReportTool.timestamp_to_datetime
 
-        reference_template = Template(reference_file)
+        reference_template = env.get_template("ui/reference.html")
         reference_html_output = reference_template.render(data)
 
-        with open(Path(Path.cwd(), "ui", "template.html")) as f:
-            template_file = f.read()
-
-        template_template = Template(template_file)
+        template_template = env.get_template("ui/template.html")
         template_html_output = template_template.render(content=reference_html_output)
 
         with open(Path(Path.cwd(), "ui", "output.html"), "w") as f:
             f.write(template_html_output)
+
+    @staticmethod
+    def timestamp_to_datetime(timestamp: str) -> str:
+        date_time = datetime.fromtimestamp(float(timestamp))
+        return date_time.strftime("%m/%d/%Y, %H:%M:%S")

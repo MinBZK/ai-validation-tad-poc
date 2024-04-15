@@ -8,20 +8,24 @@
     </p>
     <dl data-v-40e6aa29="" class="dl columns--data">
         <div data-v-40e6aa29="" class="">
-            <dt data-v-40e6aa29="">Organisatie(s)</dt>
+            <dt data-v-40e6aa29="">Organization(s)</dt>
             <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
                     <div data-v-40e6aa29="" class="width-sizing custom-html">
                         {% for owner in owners %}
                         {{owner.organization}}
+                        {{owner.oin}}<br />
+                        {{owner.name}}<br />
+                        {{owner.email}}</br>
+                        {{owner.role}}</br>
                         {% endfor %}
                     </div>
                 </span>
             </dd>
         </div>
         <div data-v-40e6aa29="" class="">
-            <dt data-v-40e6aa29="">Thema</dt>
+            <dt data-v-40e6aa29="">Publication Category</dt>
             <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
-                    <div data-v-40e6aa29="" class="width-sizing custom-html">Organisatie en bedrijfsvoering</div>
+                    <div data-v-40e6aa29="" class="width-sizing custom-html">{{publication_category}}</div>
                 </span>
             </dd>
         </div>
@@ -32,6 +36,22 @@
                 </span>
             </dd>
         </div>
+        <div data-v-40e6aa29="" class="">
+            <dt data-v-40e6aa29="">Begin Date</dt>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+                    <div data-v-40e6aa29="" class="width-sizing custom-html">{{begin_date}}</div>
+                </span>
+            </dd>
+        </div>
+        {% if end_date %}
+        <div data-v-40e6aa29="" class="">
+            <dt data-v-40e6aa29="">End Date</dt>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+                    <div data-v-40e6aa29="" class="width-sizing custom-html">{{end_date}}</div>
+                </span>
+            </dd>
+        </div>
+        {% endif %}
     </dl>
 </div>
 
@@ -40,12 +60,18 @@
         <li onclick="toggle('systemcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
                 tabindex="0" aria-selected="false" class="noselect is-selected no-focus-border" role="tab"
                 aria-controls="panel-1">System card</a></li>
+        <li onclick="toggle('responsibleuse', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
+                tabindex="-1" aria-selected="false" class="noselect no-focus-border" role="tab"
+                aria-controls="panel-2">Responsible Use</a></li>
+        <li onclick="toggle('operations', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
+                tabindex="-1" aria-selected="false" class="noselect no-focus-border" role="tab"
+                aria-controls="panel-3">Operations</a></li>
         <li onclick="toggle('modelcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
                 tabindex="-1" aria-selected="false" class="noselect no-focus-border" role="tab"
-                aria-controls="panel-2">Model card</a></li>
+                aria-controls="panel-4">Model card</a></li>
         <li onclick="toggle('assessmentcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
                 tabindex="-1" aria-selected="false" class="noselect no-focus-border" role="tab"
-                aria-controls="panel-3">Assessment card</a></li>
+                aria-controls="panel-5">Assessment card</a></li>
     </ul>
 
     <div id="systemcard" class="tad_visible tad_tabs">
@@ -55,18 +81,6 @@
                 <td>{{upl}}</td>
             </tr>
             <tr>
-                <th>Owners</th>
-                <td>
-                    {% for owner in owners %}
-                    {{owner.oin}}<br />
-                    {{owner.organization}}<br />
-                    {{owner.name}}<br />
-                    {{owner.email}}</br>
-                    {{owner.role}}</br>
-                    {% endfor %}
-                </td>
-            </tr>
-            <tr>
                 <th>Labels</th>
                 <td>
                     {% for label in labels %}
@@ -74,18 +88,17 @@
                     {% endfor %}
                 </td>
             </tr>
-            <tr>
-                <th>Publication category</th>
-                <td>{{publication_category}}</td>
+            <th>References</th>
+            <td>
+                {% for item in references %}
+                {{item}}<br />
+                {% endfor %}
+            </td>
             </tr>
-            <tr>
-                <th>Begin date</th>
-                <td>{{begin_date}}</td>
-            </tr>
-            <tr>
-                <th>End date</th>
-                <td>{{end_date}}</td>
-            </tr>
+        </table>
+    </div>
+    <div id="responsibleuse" class="tad_hidden tad_tabs">
+        <table class="table__data-overview">
             <tr>
                 <th>Goal and impact</th>
                 <td>{{goal_and_impact}}</td>
@@ -95,12 +108,12 @@
                 <td>{{considerations}}</td>
             </tr>
             <tr>
-                <th>Risk management</th>
-                <td>{{risk_management}}</td>
-            </tr>
-            <tr>
                 <th>Human intervention</th>
                 <td>{{human_intervention}}</td>
+            </tr>
+            <tr>
+                <th>Risk management</th>
+                <td>{{risk_management}}</td>
             </tr>
             <tr>
                 <th>Legal base</th>
@@ -110,8 +123,12 @@
                     {% endfor %}
                 </td>
             </tr>
+        </table>
+    </div>
+    <div id="operations" class="tad_hidden tad_tabs">
+        <table class="table__data-overview">
             <tr>
-                <th>Used data</th>
+                <th>Data</th>
                 <td>{{used_data}}</td>
             </tr>
             <tr>
@@ -122,14 +139,6 @@
                 <th>External providers</th>
                 <td>
                     {% for item in external_providers %}
-                    {{item}}<br />
-                    {% endfor %}
-                </td>
-            </tr>
-            <tr>
-                <th>References</th>
-                <td>
-                    {% for item in references %}
                     {{item}}<br />
                     {% endfor %}
                 </td>
@@ -275,14 +284,17 @@
         {% for content in assessment.contents %}
 
         <h3> {{content.question}} </h3>
-        {{content.answer}} <br />
-
-        Answered at {{ content.timestamp }} by
+        Answered at {{ content.timestamp | timestamp_to_datetime}} by
         <ul>
             {% for author in content.authors %}
-            <li> author </li>
+            <li> {{author.name}} </li>
             {% endfor %}
         </ul>
+
+        <p>
+            {{content.answer}} <br />
+        </p>
+
         {% endfor %}
         {% endfor %}
     </div>
