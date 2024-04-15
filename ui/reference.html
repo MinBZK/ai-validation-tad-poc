@@ -71,7 +71,7 @@
                 aria-controls="panel-4">Model card</a></li>
         <li onclick="toggle('assessmentcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
                 tabindex="-1" aria-selected="false" class="noselect no-focus-border" role="tab"
-                aria-controls="panel-5">Assessment card</a></li>
+                aria-controls="panel-5">IAMA</a></li>
     </ul>
 
     <div id="systemcard" class="tad_visible tad_tabs">
@@ -119,7 +119,7 @@
                 <th>Legal base</th>
                 <td>
                     {% for item in legal_base %}
-                    {{item.name}}: {{item.link}}
+                    {{item.name}}: <a href={{item.link}}>{{item.link}}</a>
                     {% endfor %}
                 </td>
             </tr>
@@ -162,7 +162,7 @@
                     {{ models[0].license }}
                     {% else %}
                     {{ models[0].license_name }} <br />
-                    {{ models[0].license_link }}
+                    <a href={{ models[0].license_link }}>{{ models[0].license_link }}</a>
                     {% endif %}
                 </td>
             </tr>
@@ -191,7 +191,8 @@
         <table class="table__data-overview">
             <tr>
                 <th> Model </th>
-                <td> {{model.model}} </td>
+                <td> <a href={{ model.model }}>{{ model.model }}</a>
+                </td>
             </tr>
             <tr>
                 <th> Artifacts </th>
@@ -277,11 +278,10 @@
 
     </div>
     <div id="assessmentcard" class="tad_hidden tad_tabs">
-        {% for assessment in assessments %}
 
-        <h2> {{assessment.name}} ({{assessment.date}})</h2>
+        <p> Submitted on {{assessments[0].date}}</p>
 
-        {% for content in assessment.contents %}
+        {% for content in assessments[0].contents %}
 
         <h3> {{content.question}} </h3>
         Answered at {{ content.timestamp | timestamp_to_datetime}} by
@@ -295,7 +295,6 @@
             {{content.answer}} <br />
         </p>
 
-        {% endfor %}
         {% endfor %}
     </div>
 
