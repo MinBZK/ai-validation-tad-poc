@@ -1,14 +1,14 @@
 name: IAMA
 date: "2025-03-25"
 contents:
-  - question: "Licht uw voorstel voor het gebruik/de inzet van een algoritme toe. Wat is de aanleiding hiervoor geweest? Voor welk probleem moet het algoritme een oplossing bieden?" 
+  - question: "Licht uw voorstel voor het gebruik/de inzet van een algoritme toe. Wat is de aanleiding hiervoor geweest? Voor welk probleem moet het algoritme een oplossing bieden?"
     answer: Answer
     remarks: Remark
     authors:
       - name: "author_1"
       - name: "author_2"
     timestamp: "1711630721"
-  - question: "Wat is het doel dat bereikt dient te worden met de inzet van het algoritme? Wat is hierbij het hoofddoel en wat zijn subdoelen?" 
+  - question: "Wat is het doel dat bereikt dient te worden met de inzet van het algoritme? Wat is hierbij het hoofddoel en wat zijn subdoelen?"
     answer: Answer
     remarks: Remark
     authors:
