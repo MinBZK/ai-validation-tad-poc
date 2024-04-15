@@ -203,8 +203,31 @@
             <tr>
                 <th> Artifacts </th>
                 <td>
-                    {% for artifact in model.artifacs %}
-                    {{ artifact }}
+                    {% for artifact in model.artifacts %}
+                    {% if artifact.type == "onnx" %}
+                    ONNX representation: <input type="text" readonly id="modelurl" value="{{ artifact.uri }}" />
+                    <table>
+                    {% for e in artifact.example %}
+                    {% for key, value in e.items() %}
+                        <tr>
+                            <td>{{key}}</td>
+                            <td> <input type="text" id="input.{{key}}" value="{{value}}" /></td>
+                        </tr>
+                    {% endfor %}
+                    {% endfor %}
+                    </table>
+                    <div>
+                        <button id="runInference">Run Inference</button>
+                    </div>
+                    <div>
+                        <h3>Output</h3>
+                        Label: <span id="label"></span><br />
+                        Output probabilities:<br />
+                        <div id="outputContainer"></div>
+                    </div>
+                    <div id="error" ></div>
+                    <script type="module" src="assets/inference.js"></script>
+                    {% endif %}
                     {% endfor %}
                 </td>
             </tr>

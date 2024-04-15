@@ -25,7 +25,13 @@ model-index:
 - name: stt_nl_fastconformer_hybrid_large_pc
   model: https://huggingface.co/nvidia/stt_nl_fastconformer_hybrid_large_pc
   artifacts:
-  - "artifact_1"
+  - uri: "https://raw.githubusercontent.com/MinBZK/poc-kijkdoos-wasm-models/main/logres_iris/logreg_iris.onnx"
+    type: "onnx"
+    example:
+      - sepal_length: 1
+      - sepal_width: 2
+      - petal_length: 3
+      - petal_width: 4
   parameters:
   - name: epochs
     dtype: int
