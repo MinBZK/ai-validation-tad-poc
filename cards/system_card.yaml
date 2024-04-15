@@ -3,7 +3,7 @@ name: "Aangifte Vertrek Buitenland"
 upl: "https://standaarden.overheid.nl/owms/terms/AangifteVertrekBuitenland"
 owners:
 - oin: "00000001003214345000"
-  organization: "BZK"
+  organization: "Ministerie van Binnenlandse Zaken en Koninkrijksrelaties"
   name: "John Doe"
   email: "johndoe@email.com"
   role: "Data Scientist"
@@ -31,9 +31,9 @@ external_providers:
 - "external_provider_2"
 - "external_provider_3"
 references:
-- "reference_to_provider_1"
-- "reference_to_provider_2"
-- "reference_to_provider_3"
+- "reference_1"
+- "reference_2"
+- "reference_3"
 
 models:
  - !include models/model_card.yaml

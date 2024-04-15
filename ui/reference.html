@@ -1,29 +1,35 @@
 <h1>{{name}}</h1>
 
 <div data-v-40e6aa29="" class="item default custom-blue-box">
-    <p data-v-40e6aa29="" lang="nl"><span data-v-40e6aa29="" class="word-break" ca=""><div data-v-40e6aa29=""
-                                                                                           class="width-sizing custom-html">(Interne) tooling die gebruikt wordt voor het verwerken van data van DGDOO Beleidsinformatie.</div></span>
+    <p data-v-40e6aa29="" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+            <div data-v-40e6aa29="" class="width-sizing custom-html">
+                {{description}}</div>
+        </span>
     </p>
     <dl data-v-40e6aa29="" class="dl columns--data">
         <div data-v-40e6aa29="" class="">
-            <dt data-v-40e6aa29="">Organisatie</dt>
-            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break"
-                                                                            ca=""><div data-v-40e6aa29=""
-                                                                                       class="width-sizing custom-html">Ministerie van Binnenlandse Zaken en Koninkrijksrelaties</div></span>
+            <dt data-v-40e6aa29="">Organisatie(s)</dt>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+                    <div data-v-40e6aa29="" class="width-sizing custom-html">
+                        {% for owner in owners %}
+                        {{owner.organization}}
+                        {% endfor %}
+                    </div>
+                </span>
             </dd>
         </div>
         <div data-v-40e6aa29="" class="">
             <dt data-v-40e6aa29="">Thema</dt>
-            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break"
-                                                                            ca=""><div data-v-40e6aa29=""
-                                                                                       class="width-sizing custom-html">Organisatie en bedrijfsvoering</div></span>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+                    <div data-v-40e6aa29="" class="width-sizing custom-html">Organisatie en bedrijfsvoering</div>
+                </span>
             </dd>
         </div>
         <div data-v-40e6aa29="" class="">
             <dt data-v-40e6aa29="">Status</dt>
-            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break"
-                                                                            ca=""><div data-v-40e6aa29=""
-                                                                                       class="width-sizing custom-html">In gebruik</div></span>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+                    <div data-v-40e6aa29="" class="width-sizing custom-html">{{status}}</div>
+                </span>
             </dd>
         </div>
     </dl>
@@ -31,27 +37,19 @@
 
 <div class="tabs" data-decorator="init-tabs">
     <ul data-v-25c41979="" class="tabs__list" role="tablist">
-        <li onclick="toggle('systemcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979="" tabindex="0" aria-selected="false"
-                                                      class="noselect is-selected no-focus-border" role="tab"
-                                                      aria-controls="panel-1">System card</a></li>
-        <li onclick="toggle('modelcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979="" tabindex="-1" aria-selected="false"
-                                                      class="noselect no-focus-border" role="tab"
-                                                      aria-controls="panel-2">Model card</a></li>
-        <li onclick="toggle('assessmentcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979="" tabindex="-1" aria-selected="false"
-                                                      class="noselect no-focus-border" role="tab"
-                                                      aria-controls="panel-3">Assessment card</a></li>
+        <li onclick="toggle('systemcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
+                tabindex="0" aria-selected="false" class="noselect is-selected no-focus-border" role="tab"
+                aria-controls="panel-1">System card</a></li>
+        <li onclick="toggle('modelcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
+                tabindex="-1" aria-selected="false" class="noselect no-focus-border" role="tab"
+                aria-controls="panel-2">Model card</a></li>
+        <li onclick="toggle('assessmentcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
+                tabindex="-1" aria-selected="false" class="noselect no-focus-border" role="tab"
+                aria-controls="panel-3">Assessment card</a></li>
     </ul>
 
     <div id="systemcard" class="tad_visible tad_tabs">
         <table class="table__data-overview">
-            <tr>
-                <td>System Card Version</td>
-                <td>{{version}}</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>{{name}}</td>
-            </tr>
             <tr>
                 <td>UPL</td>
                 <td>{{upl}}</td>
@@ -60,17 +58,13 @@
                 <td>Owners</td>
                 <td>
                     {% for owner in owners %}
-                    {{owner.oin}}<br/>
-                    {{owner.organization}}<br/>
-                    {{owner.name}}<br/>
+                    {{owner.oin}}<br />
+                    {{owner.organization}}<br />
+                    {{owner.name}}<br />
                     {{owner.email}}</br>
                     {{owner.role}}</br>
                     {% endfor %}
                 </td>
-            </tr>
-            <tr>
-                <td>Description</td>
-                <td>{{description}}</td>
             </tr>
             <tr>
                 <td>Labels</td>
@@ -79,10 +73,6 @@
                     {{ label.name }}={{label.value}},
                     {% endfor %}
                 </td>
-            </tr>
-            <tr>
-                <td>Status</td>
-                <td>{{status}}</td>
             </tr>
             <tr>
                 <td>Publication category</td>
@@ -132,7 +122,7 @@
                 <td>External providers</td>
                 <td>
                     {% for item in external_providers %}
-                    {{item}}<br/>
+                    {{item}}<br />
                     {% endfor %}
                 </td>
             </tr>
@@ -140,17 +130,145 @@
                 <td>References</td>
                 <td>
                     {% for item in references %}
-                    {{item}}<br/>
+                    {{item}}<br />
                     {% endfor %}
                 </td>
             </tr>
         </table>
     </div>
     <div id="modelcard" class="tad_hidden tad_tabs">
-    Inhoud voor de modelcard
+        <table class="table__data-overview">
+            <tr>
+                <td>Language</td>
+                <td>
+                    {% for lang in models[0].language %}
+                    {{ lang }}
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>License</td>
+                <td>
+                    {% if models[0].license != "other" %}
+                    {{ models[0].license }}
+                    {% else %}
+                    {{ models[0].license_name }} <br />
+                    {{ models[0].license_link }}
+                    {% endif %}
+                </td>
+            </tr>
+            <td>Tags</td>
+            <td>
+                {% for tag in models[0].tags %}
+                {{ tag }}
+                {% endfor %}
+            </td>
+            <tr>
+                <td>Owners</td>
+                <td>
+                    {% for owner in owners %}
+                    {{owner.oin}}<br />
+                    {{owner.organization}}<br />
+                    {{owner.name}}<br />
+                    {{owner.email}}</br>
+                    {{owner.role}}</br>
+                    {% endfor %}
+                </td>
+            </tr>
+        </table>
+
+        {% for model in models[0].model_index %}
+        <h2> {{model.name}} </h2>
+        <table class="table__data-overview">
+            <tr>
+                <td> Model </td>
+                <td> {{model.model}} </td>
+            </tr>
+            <tr>
+                <td> Artifacts </td>
+                <td>
+                    {% for artifact in model.artifacs %}
+                    {{ artifact }}
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td> Parameters </td>
+                <td>
+                    {% for parameter in model.parameters %}
+                    {{ parameter.name }} <br />
+                    {{ parameter.value }} <br />
+                    {% for label in parameter.labels %}
+                    {{ label.name }} <br />
+                    {{ label.value }}
+                    {% endfor %}
+                    {% endfor %}
+                </td>
+            </tr>
+
+        </table>
+
+        {% for result in model.results %}
+        <h3> Task: {{result.task.name}} </h3>
+
+        {% for dataset in result.datasets %}
+        <h4> Dataset {{dataset.name}} </h4>
+        <table>
+            <tr>
+                <td> Type </td>
+                <td> {{dataset.type}} </td>
+            </tr>
+            <tr>
+                <td> Split </td>
+                <td> {{dataset.split}} </td>
+            </tr>
+            <tr>
+                <td> Features </td>
+                <td>
+                    {% for feature in dataset.features %}
+                    {{ feature }}
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td> Revision </td>
+                <td> {{dataset.revision}} </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+        {% for metric in result.metrics %}
+        <h4> Metric: {{metric.name}} </h4>
+        <table>
+            <tr>
+                <td> Type </td>
+                <td> {{metric.type}} </td>
+            </tr>
+            <tr>
+                <td> Value </td>
+                <td> {{metric.value}} </td>
+            </tr>
+            <tr>
+                <td> Labels </td>
+                <td>
+                    {% for label in metric.labels %}
+                    {{ label.name }} <br />
+                    {{ label.type }} <br />
+                    {{ label.value }}
+                    {% endfor %}
+                </td>
+            </tr>
+
+        </table>
+        {% endfor %}
+        {% endfor %}
+
+        {% endfor %}
+
     </div>
     <div id="assessmentcard" class="tad_hidden tad_tabs">
-    Inhoud van de assessment card
+        Inhoud van de assessment card
     </div>
 
 

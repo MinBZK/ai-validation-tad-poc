@@ -1,5 +1,6 @@
 language:
   - nl
+license: other
 license_name: cc-by-4.0
 license_link: https://creativecommons.org/licenses/by/4.0/legalcode.en
 tags:
@@ -37,7 +38,7 @@ model-index:
   - task:
       type: automatic-speech-recognition
       name: Automatic Speech Recognition
-    dataset:
+    datasets:
       - type: "common_voice"
         name: "Common Voice (French)"
         split: "train"
