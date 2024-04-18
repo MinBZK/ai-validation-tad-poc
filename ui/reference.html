@@ -1,0 +1,371 @@
+<h1>{{name}}</h1>
+
+<div data-v-40e6aa29="" class="item default custom-blue-box">
+    <p data-v-40e6aa29="" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+            <div data-v-40e6aa29="" class="width-sizing custom-html">
+                <p> {{description}} </p>
+
+                {% if upl %}
+                <b>UPL:</b> {{ upl }}
+                {% endif %}
+
+            </div>
+        </span>
+    </p>
+    <dl data-v-40e6aa29="" class="dl columns--data">
+        <div data-v-40e6aa29="" class="">
+            <dt data-v-40e6aa29="">Organization(s)</dt>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+                    <div data-v-40e6aa29="" class="width-sizing custom-html" style="position: relative">
+                        {% for owner in owners %}
+                        <img onclick="toggleOrganisation('organisation_id_1', this);"
+                            style="position: absolute; left: -20px; top: 15px; transform: rotate(180deg);"
+                            data-v-6f7dd08b="" class="rotate-down clickable"
+                            src="./assets/icon-chevron-left-blue.d2147f50.svg" alt="Pijltje omlaag"></img>
+                        <a href="https://oinregister.logius.nl/oin-register/{{owner.oin}}">{{owner.organization}}</a>
+                        <span style="display: none" id="organisation_id_1">
+                            {{owner.name}}, {{owner.role}}<br />
+                            {{owner.email}}<br />
+                        </span>
+                        {% endfor %}
+                    </div>
+                </span>
+            </dd>
+        </div>
+        <div data-v-40e6aa29="" class="">
+            <dt data-v-40e6aa29="">Publication Category</dt>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+                    <div data-v-40e6aa29="" class="width-sizing custom-html">{{publication_category}}</div>
+                </span>
+            </dd>
+        </div>
+        <div data-v-40e6aa29="" class="">
+            <dt data-v-40e6aa29="">Status</dt>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+                    <div data-v-40e6aa29="" class="width-sizing custom-html">{{status}}</div>
+                </span>
+            </dd>
+        </div>
+        <div data-v-40e6aa29="" class="">
+            <dt data-v-40e6aa29="">Begin Date</dt>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+                    <div data-v-40e6aa29="" class="width-sizing custom-html">{{begin_date}}</div>
+                </span>
+            </dd>
+        </div>
+        {% if end_date %}
+        <div data-v-40e6aa29="" class="">
+            <dt data-v-40e6aa29="">End Date</dt>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+                    <div data-v-40e6aa29="" class="width-sizing custom-html">{{end_date}}</div>
+                </span>
+            </dd>
+        </div>
+        {% endif %}
+        {% if labels %}
+        <div data-v-40e6aa29="" class="">
+            <dt data-v-40e6aa29="">Labels</dt>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+                    <div data-v-40e6aa29="" class="width-sizing custom-html">
+                        {% for label in labels %}
+                        {{ label.name }}:{{label.value}} <br />
+                        {% endfor %}
+                    </div>
+                </span>
+            </dd>
+        </div>
+        {% endif %}
+        {% if references %}
+        <div data-v-40e6aa29="" class="">
+            <dt data-v-40e6aa29="">References</dt>
+            <dd data-v-40e6aa29="" class="no-bottom-margin" lang="nl"><span data-v-40e6aa29="" class="word-break" ca="">
+                    <div data-v-40e6aa29="" class="width-sizing custom-html">
+                        {% for item in references %}
+                        {{item}}<br />
+                        {% endfor %}
+                    </div>
+                </span>
+            </dd>
+        </div>
+        {% endif %}
+    </dl>
+</div>
+
+<div class="tabs" data-decorator="init-tabs">
+    <ul data-v-25c41979="" class="tabs__list" role="tablist">
+        <li onclick="toggle('responsibleuse', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
+                tabindex="0" aria-selected="false" class="noselect is-selected no-focus-border" role="tab"
+                aria-controls="panel-1">Responsible Use</a></li>
+        <li onclick="toggle('operations', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
+                tabindex="-1" aria-selected="false" class="noselect no-focus-border" role="tab"
+                aria-controls="panel-2">Operations</a></li>
+        <li onclick="toggle('modelcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
+                tabindex="-1" aria-selected="false" class="noselect no-focus-border" role="tab"
+                aria-controls="panel-3">Model card</a></li>
+        <li onclick="toggle('assessmentcard', this)" data-v-25c41979="" role="presentation"><a data-v-25c41979=""
+                tabindex="-1" aria-selected="false" class="noselect no-focus-border" role="tab"
+                aria-controls="panel-4">IAMA</a></li>
+    </ul>
+
+</div>
+<div id="responsibleuse" class="tad_visible tad_tabs">
+    <table class="table__data-overview">
+        <tr>
+            <th>Goal and impact</th>
+            <td>{{goal_and_impact}}</td>
+        </tr>
+        <tr>
+            <th>Considerations</th>
+            <td>{{considerations}}</td>
+        </tr>
+        <tr>
+            <th>Human intervention</th>
+            <td>{{human_intervention}}</td>
+        </tr>
+        <tr>
+            <th>Risk management</th>
+            <td>{{risk_management}}</td>
+        </tr>
+        <tr>
+            <th>Legal base</th>
+            <td>
+                {% for item in legal_base %}
+                {{item.name}}: <a href={{item.link}}>{{item.link}}</a>
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="operations" class="tad_hidden tad_tabs">
+    <table class="table__data-overview">
+        <tr>
+            <th>Data</th>
+            <td>{{used_data}}</td>
+        </tr>
+        <tr>
+            <th>Technical design</th>
+            <td>{{technical_design}}</td>
+        </tr>
+        <tr>
+            <th>External providers</th>
+            <td>
+                {% for item in external_providers %}
+                {{item}}<br />
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="modelcard" class="tad_hidden tad_tabs">
+    <table class="table__data-overview">
+        <tr>
+            <th>Language</th>
+            <td>
+                {% for lang in models[0].language %}
+                {{ lang }}
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <th>License</th>
+            <td>
+                {% if models[0].license != "other" %}
+                {{ models[0].license }}
+                {% else %}
+                {{ models[0].license_name }} <br />
+                <a href={{ models[0].license_link }}>{{ models[0].license_link }}</a>
+                {% endif %}
+            </td>
+        </tr>
+        <th>Tags</th>
+        <td>
+            {% for tag in models[0].tags %}
+            {{ tag }} <br />
+            {% endfor %}
+        </td>
+        <tr>
+            <th>Owners</th>
+            <td>
+                {% for owner in models[0].owners %}
+                <a href="https://oinregister.logius.nl/oin-register/{{owner.oin}}">{{owner.organization}}</a><br />
+                {{owner.name}}, {{owner.role}} <br />
+                {{owner.email}} <br />
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+
+    {% for model in models[0].model_index %}
+    <h2> {{model.name}} </h2>
+    <table class="table__data-overview">
+        <tr>
+            <th> Model </th>
+            <td> <a href={{ model.model }}>{{ model.model }}</a>
+            </td>
+        </tr>
+        <tr>
+            <th> Artifacts </th>
+            <td style="position: relative">
+                {% for artifact in model.artifacts %}
+                {% if artifact.type == "onnx" %}
+
+                <button style="position: absolute; right: 10px; padding: 0.3em;" data-v-fb384bc6=""
+                    class="button button--secondary" aria-disabled="false">
+                    <a style="text-decoration-line: none" id="modelurl" href="{{ artifact.uri }}" data-v-fb384bc6=""
+                        class="button__label">Download ONNX</a>
+                </button>
+
+                <h3>Features</h3>
+                <table class="inferenceInput">
+                    {% for e in artifact.example %}
+                    {% for key, value in e.items() %}
+                    <tr>
+                        <th>{{key}}</th>
+                        <td> <input type="text" id="input.{{key}}" value="{{value}}" /></td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                </table>
+                <div>
+                    <button class="button button--block button--primary" id="runInference">
+                        <span class="button__label">
+                            Run Inference
+                        </span>
+                    </button>
+                </div>
+                <div style="margin-top: 1em; display: none" id="inferenceResultsContainer">
+                    <h3>Output</h3>
+                    <strong>Model prediction:</strong> <span id="label"></span><br /><br />
+                    <h4>Probability distribution</h4>
+                    <div id="outputContainer"></div>
+
+                    <div>
+                        <canvas id="probabilityChart"></canvas>
+                    </div>
+
+                </div>
+
+                <div id="error"></div>
+                {% endif %}
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <th> Parameters </th>
+            <td>
+                {% for parameter in model.parameters %}
+                {{ parameter.value }} {{ parameter.name }} <br />
+                {% for label in parameter.labels %}
+                {{ label.name }}: {{ label.value }}
+                {% endfor %}
+                {% endfor %}
+            </td>
+        </tr>
+
+    </table>
+
+    {% for result in model.results %}
+    <h3> Task: {{result.task.name}} </h3>
+
+    {% for dataset in result.datasets %}
+    <h4> Dataset {{dataset.name}} </h4>
+    <table>
+        <tr>
+            <th> Type </th>
+            <td> {{dataset.type}} </td>
+        </tr>
+        <tr>
+            <th> Split </th>
+            <td> {{dataset.split}} </td>
+        </tr>
+        <tr>
+            <th> Features </th>
+            <td>
+                {% for feature in dataset.features %}
+                {{ feature }} <br />
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <th> Revision </th>
+            <td> {{dataset.revision}} </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    {% for metric in result.metrics %}
+    <h4> Metric: {{metric.name}} </h4>
+    <table>
+        <tr>
+            <th> Type </th>
+            <td> {{metric.type}} </td>
+        </tr>
+        <tr>
+            <th> Value </th>
+            <td> {{metric.value}} </td>
+        </tr>
+        <tr>
+            <th> Labels </th>
+            <td>
+                {% for label in metric.labels %}
+                {{ label.name }}: {{ label.value }}
+                {% endfor %}
+            </td>
+        </tr>
+
+    </table>
+    {% endfor %}
+
+    {% for bar_plot in result.measurements.bar_plots %}
+    <h4> {{bar_plot.name}} </h4>
+    <!-- TODO: it is much more logical to retrieve the original model card in yaml and extract the values from there -->
+    <script>
+    let shapData = [
+        {% for shapResult in bar_plot.results %}
+        {
+            name: "{{ shapResult.name }}",
+            value: {{ shapResult.value }}
+        },
+        {% endfor %}];
+
+        shapData.sort( compareShapValue );
+
+        window.onload = (event) => {
+            renderShapGraph(shapData.flatMap((x) => x.value), shapData.flatMap((x) => x.name));
+        };
+    </script>
+
+    <div>
+        <canvas id="shapChart"></canvas>
+    </div>
+
+
+    {% endfor %}
+    {% endfor %}
+    {% endfor %}
+
+</div>
+<div id="assessmentcard" class="tad_hidden tad_tabs">
+
+    <p> Submitted on {{assessments[0].date}}.</p>
+
+    {% for content in assessments[0].contents %}
+
+    <h3> {{content.question}} </h3>
+    Answered at {{ content.timestamp }} by
+    <ul>
+        {% for author in content.authors %}
+        <li> {{author.name}} </li>
+        {% endfor %}
+    </ul>
+
+    <p>
+        {{content.answer}} <br />
+    </p>
+
+    {% endfor %}
+</div>
+
+
+</div>

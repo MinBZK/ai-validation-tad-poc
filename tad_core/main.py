@@ -36,10 +36,15 @@ def main():
             shap_tool = ShapTool(model, data)
             shap_values = shap_tool.get_results()
             shap_tool.save_results(shap_values, args.outputdir)
-        case ArgParser.Actions.QUESTIONNAIRE:
-            from tad_core.tools.questionnaire_tool import QuestionnaireTool
+        case ArgParser.Actions.ASSESSMENT:
+            from tad_core.tools.assessment_tool import QuestionnaireTool
 
             QuestionnaireTool.run_questionnaire(args)
+        case ArgParser.Actions.REPORT:
+            from tad_core.tools.report_tool import ReportTool
+
+            report_tool = ReportTool(args.card)
+            report_tool.render()
         case _:
             print(f"Unsupported action {args.action}")
 
