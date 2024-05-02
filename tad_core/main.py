@@ -45,6 +45,11 @@ def main():
 
             report_tool = ReportTool(args.card)
             report_tool.render()
+        case ArgParser.Actions.TRANSFORM:
+            from tad_core.tools.transform_tool import TransformTool
+
+            transform_tool = TransformTool(args.file, args.type)
+            transform_tool.transform()
         case _:
             print(f"Unsupported action {args.action}")
 

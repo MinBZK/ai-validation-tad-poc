@@ -1,0 +1,22 @@
+﻿name,organization,description_short,category,website,status,goal,proportionality,lawful_basis,standard_version,url,contact_email,lang,publiccode,source_data,methods_and_models,human_intervention,risks,provider,process_index_url,tags,source_id,begin_date,end_date,impacttoetsen,publication_category,lawful_basis_grouping,impacttoetsen_grouping,source_data_grouping
+Waarderen WOZ-objecten Amsterdam,Gemeente Amsterdam,Gemeente Amsterdam bepaalt ieder jaar de WOZ-waarde van alle onroerende zaken en gebruikt daarvoor een statistisch rekenmodel.,"Economie, Wonen",https://algoritmeregister.amsterdam.nl/ai-system/waarderen-woz-objecten-amsterdam/1094/,In gebruik,"Gemeente Amsterdam bepaalt ieder jaar de WOZ-waarde van alle onroerende zaken en gebruikt daarvoor een statistisch rekenmodel. Onze Amsterdamse taxateurs gebruiken dit model bij het taxeren, ze onderhouden het en controleren het. Deze manier van taxeren heet ‘modelmatig waarderen’. Wij gebruiken de WOZ-waarde vervolgens om de hoogte te bepalen van sommige gemeentebelastingen, zoals de onroerendezaakbelasting (OZB). De Rijksbelastingdienst gebruikt de WOZ-waarde voor haar landelijke belastingen. De Waarderingskamer is de landelijk toezichthouder. Zij houden toezicht op de manier waarop we waarderen. ","
+In het Verantwoordingsdocument WOZ leest u hoe we de WOZ-waarden voor het huidige belastingjaar bepalen. Het document geeft antwoord op de volgende vragen.
+
+Hoe ziet het proces van bepalen van een WOZ-waarde eruit?
+Welke gegevens hebben invloed op de WOZ-waarde?
+Wat is modelmatig taxeren?
+Hoe controleren we?
+
+In deze beschrijving van het algoritme verwijzen wij naar het Verantwoordingsdocument WOZ, omdat daar alle informatie over het modelmatig waarderen en het rekenmodel is te vinden.
+Het Verantwoordingsdocument WOZ vindt u hier: 
+www.amsterdam.nl/wozverantwoording 
+",,1.0.0,,algoritmen@amsterdam.nl,nld,,"Verantwoordingsdocument WOZDe combinatie van een WOZ-waarde en een adres is een persoonsgegeven. In het rekenmodel verwerken we geen verdere persoonsgegevens. Wij mogen deze persoonsgegevens verwerken vanwege onze wettelijke taak om WOZ-objecten te waarderen. Dit algoritme is onderdeel van een applicatie van een leverancier.
+In deze beschrijving van het algoritme verwijzen wij naar het Verantwoordingsdocument WOZ, omdat daar alle informatie over het modelmatig waarderen en het rekenmodel is te vinden.
+Het Verantwoordingsdocument WOZ vindt u hier: 
+www.amsterdam.nl/wozverantwoording",,"
+In deze beschrijving van het algoritme verwijzen wij naar het Verantwoordingsdocument WOZ, omdat daar alle informatie over het modelmatig waarderen en het rekenmodel is te vinden.
+Het Verantwoordingsdocument WOZ vindt u hier: 
+www.amsterdam.nl/wozverantwoording
+","In deze beschrijving van het algoritme verwijzen wij naar het Verantwoordingsdocument WOZ, omdat daar alle informatie over het modelmatig waarderen en het rekenmodel is te vinden. Het Verantwoordingsdocument WOZ vindt u hier:
+ 
+www.amsterdam.nl/wozverantwoording",,,"WOZ, Onroerende Zaken, taxatie, WOZ Waarde",,,,,Impactvolle algoritmes,,,

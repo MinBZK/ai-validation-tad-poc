@@ -14,10 +14,15 @@ class ArgParser:
         SHAP = "shap"
         ASSESSMENT = "assessment"
         REPORT = "report"
+        TRANSFORM = "transform"
 
         @classmethod
         def list(cls):
             return list(map(lambda c: c.value, cls))
+
+    class InputTypes(StrEnum):
+        ALGORITMEREGISTER = "algoritmeregister"
+        TOETSINGSKADER = "toetsingskader"
 
     _start_parser = None
     _user_namespace = argparse.Namespace()
@@ -77,6 +82,16 @@ class ArgParser:
         """
         self._start_parser.add_argument("--card", required=True, type=Path, help="the path of the system card to use")
 
+    def _set_transform_cli_args(self) -> None:
+        """
+        Defines the input parameters for a TRANSFORM of a algoritmekader CSV or toetsingskader Excel to a systemcard.
+        :return: None
+        """
+        self._start_parser.add_argument("--file", required=True, type=Path, help="the path of the system card to use")
+        self._start_parser.add_argument(
+            "--type", required=True, type=self.InputTypes, help="the path of the system card to use"
+        )
+
     def _set_additional_cli_args(self) -> None:
         """
         Adds more (required) parameters depending on the current use case
@@ -88,6 +103,8 @@ class ArgParser:
             self._set_shap_cli_args()
         elif self._user_namespace.action == ArgParser.Actions.REPORT:
             self._set_report_cli_args()
+        elif self._user_namespace.action == ArgParser.Actions.TRANSFORM:
+            self._set_transform_cli_args()
 
     def print_user_args(self) -> None:
         """
