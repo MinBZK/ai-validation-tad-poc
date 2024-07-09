@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "tad"
+name = "amt"
 version = "0.1.0"
 description = ""
 authors = ["robbertuittenbroek <robbert.uittenbroek@rijksoverheid.nl>"]
@@ -44,7 +44,7 @@ unfixable = [] # Specify rules that cannot be auto-fixed, if any.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 [tool.poetry.scripts]
-pre-commit = 'pre-commit run --all-files:tad'
+pre-commit = 'pre-commit run --all-files:amt'
 
 [tool.ruff.format]
 # Enforce double quotes for strings, following Black's style.

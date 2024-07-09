@@ -12,8 +12,11 @@ __pycache__
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# TAD
+# MacOS
+*.DS_Store
+
+# AMT
 out/
 /.idea/
-tad.log
+amt.log
 ui/output.html

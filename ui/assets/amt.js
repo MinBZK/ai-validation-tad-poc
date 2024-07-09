@@ -16,13 +16,13 @@ function toggle(myId, tabEl) {
         }
     }
 
-    let els = document.getElementsByClassName("tad_tabs");
+    let els = document.getElementsByClassName("amt_tabs");
     for (let i = 0; i  < els.length; i++) {
-        els[i].classList.remove("tad_visible");
-        els[i].classList.add("tad_hidden");
+        els[i].classList.remove("amt_visible");
+        els[i].classList.add("amt_hidden");
     }
-    document.getElementById(myId).classList.remove("tad_hidden")
-    document.getElementById(myId).classList.add("tad_visible")
+    document.getElementById(myId).classList.remove("amt_hidden")
+    document.getElementById(myId).classList.add("amt_visible")
 }
 
 function toggleOrganisation(id, clickEl) {
