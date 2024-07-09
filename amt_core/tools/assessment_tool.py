@@ -33,7 +33,7 @@ class QuestionnaireTool:
         Path(output_dir).mkdir(parents=True, exist_ok=True)
 
         print("=" * 50)
-        print("Welcome to TAD! We have a few questions for you.")
+        print("Welcome to AMT! We have a few questions for you.")
         print("=" * 50)
 
         questionnaires = QuestionnaireTool.load_questionnaires(question_dir, questionnaire_schema)

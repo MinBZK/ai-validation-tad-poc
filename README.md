@@ -1,6 +1,6 @@
-# ai-validation-tad-poc
+# ai-validation-amt-poc
 
-A proof-of-concept for simple CLI for generating TAD reports.
+A proof-of-concept for simple CLI for generating AMT reports.
 
 ## What does this tool do?
 
@@ -8,19 +8,19 @@ The tool can perform different actions.
 
 A shap test can be performed against a model with testdata.
 ```
-tad --action=shap --model=testdata/model/sample_bc_credit_sklearn_linear.LogisticRegression.sav
+amt --action=shap --model=testdata/model/sample_bc_credit_sklearn_linear.LogisticRegression.sav
 --data=testdata/data/sample_bc_credit_data_no_default.sav --outputdir=tests
 ```
 
 Questionnaires can be filled out.
 
 ```
-tad --action=questionnaire
+amt --action=questionnaire
 ```
 
-### TAD
+### AMT
 
-Given a model and a dataset, a TAD explainer is used to generate results which are saved for future usage.
+Given a model and a dataset, an AMT explainer is used to generate results which are saved for future usage.
 
 By default, the outputfile is saved to out/shap.yaml and contains:
 
@@ -46,14 +46,14 @@ file with questions. As two examples we have put `general_info.json` and `iama.j
 directory. The idea is that users can upload their own custom questionnaires. The file `schema/question.json`
 contains a json schema the questionnaires in `questionnaires/` should adhere to.
 
-To run the CLI with defaults, run `poetry run python tad/__main__.py` from the root directory of
+To run the CLI with defaults, run `poetry run python amt/__main__.py` from the root directory of
 this repository. This will guide the user through the questions in `questionnaires/`. Users can abort
 at any time by CTRL+C; this will save the intermediate results as yaml files to the `out/` directory.
 
 Optionnaly users can provide command line options to specify a path to the questionnaire validation
 schema, the questionnaire directory and the output directory:
 ```
-tad [-h] [--schema SCHEMA] [--inputdir INPUTDIR] [--outputdir OUTPUTDIR]
+amt [-h] [--schema SCHEMA] [--inputdir INPUTDIR] [--outputdir OUTPUTDIR]
 ```
 
 ## External libraries used

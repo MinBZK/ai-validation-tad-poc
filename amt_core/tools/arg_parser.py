@@ -23,7 +23,7 @@ class ArgParser:
     _user_namespace = argparse.Namespace()
 
     def __init__(self):
-        self._start_parser = argparse.ArgumentParser(description="CLI tool for TAD", conflict_handler="resolve")
+        self._start_parser = argparse.ArgumentParser(description="CLI tool for AMT", conflict_handler="resolve")
         self._set_shared_cli_args()
         self._set_additional_cli_args()
 

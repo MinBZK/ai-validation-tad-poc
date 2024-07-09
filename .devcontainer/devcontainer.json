@@ -1,8 +1,8 @@
 {
   "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
   "postStartCommand": "bash -c 'poetry install'",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/app/tad,type=bind",
-  "workspaceFolder": "/app/tad",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/app/amt,type=bind",
+  "workspaceFolder": "/app/amt",
   "features": {
     "ghcr.io/devcontainers/features/python:1": {
       "version": "3.12",
